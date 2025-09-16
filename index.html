@@ -1,41 +1,67 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-    <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            font-family: 'Arial', sans-serif;
-        }
-
-        h1 {
-            color: #fff;
-            font-size: 4rem;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            animation: pulse 2s infinite;
-        }
-
-        /* Animação suave */
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="css/topbar.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/estrutura.css" />
+    <title>Csharp</title>
 </head>
+
 <body>
-    <h1>Hello World!</h1>
+    <div class="top-bar-neon">
+        <button class="active"><span>Home</span></button>
+        <button><span>Iniciante</span></button>
+        <button><span>Python</span></button>
+        <button onclick="window.location.href='/csharp/about.html';">
+            <span>C#</span>
+        </button>
+
+        </button>
+        </button>
+        <button><span>JavaScript</span></button>
+        <button><span>HTML</span></button>
+        <button><span>CSS</span></button>
+    </div>
+    <div class="main-content">
+
+        <nav class="nav flex-column sidebar">
+            <button>Sobre C#</button>
+            <button onclick="window.location.href='csharp/about.html';">ide</button>
+            <button onclick="window.location.href='https://whatsappnewbie.github.io/csharp/cursos';">Cursos</button>
+            <button onclick="window.location.href='https://whatsappnewbie.github.io/csharp/exemplos';">
+                Exemplos
+            </button>
+            <button onclick="window.location.href='https://whatsappnewbie.github.io/csharp/exercicios';">
+                Exercicios
+            </button>
+            <button onclick="window.location.href='https://whatsappnewbie.github.io/csharp/frameworks';">
+                Frameworks
+            </button>
+            <button onclick="window.location.href='https://whatsappnewbie.github.io/csharp/contribuintes';">
+                Contribuintes
+            </button>
+        </nav>
+
+        <div class="scrollable-content-center" id="content">
+            <!-- Conteúdo do arquivo .md será carregado aqui -->
+        </div>
+    </div>
+
+    <script>
+        fetch("welcome.md")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("content").innerHTML = data
+                    .replace(/#/g, "<h1>")
+                    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+                    .replace(/_(.*?)_/g, "<em>$1</em>");
+            })
+            .catch((error) => console.error("Erro ao carregar o arquivo .md:", error));
+    </script>
 </body>
+
 </html>

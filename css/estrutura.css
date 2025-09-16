@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+.main-content {
+    display: flex;
+    flex: 1;
+}
+.scrollable-content {
+    overflow-y: auto;
+    padding: 20px;
+    
+}
+.scrollable-content {
+    margin-left: 152px;
+    margin-top: 50px;
+    
+}
+.scrollable-content-center {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    
+    
+}
+.scrollable-content-left {
+    width: 100%;
+    font-family: Times New Roman, Times;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 379px;
+
+}
+.scrollable-code {
+    margin-left: 161px;
+    margin-top: 50px;
+}
+.code-box {
+    border-radius: 16px;
+    font-size: 15px;
+}
+pre {
+    font-size: 19px;
+    font-family: Times New Roman, Times;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+h5{
+    color: darkblue;
+}
